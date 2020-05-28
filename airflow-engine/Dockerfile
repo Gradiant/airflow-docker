@@ -1,0 +1,12 @@
+# Airflow seems to crash with Python 3.8, it's important to use version 3.6
+FROM python:3.7
+
+# Install and setup Airflow
+RUN pip3 install 'apache-airflow[mysql,crypto]' mysql-connector-python
+
+# Configure Airflow: connect to backend and create connections to Atlassian API
+COPY airflow.sh /airflow.sh
+RUN chmod +x airflow.sh
+COPY fernet.py /fernet.py
+COPY mysqlconnect.py /mysqlconnect.py
+CMD ./airflow.sh
