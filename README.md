@@ -23,7 +23,7 @@ By default, Airflow stores all the data into the database as plaintext, includin
 ## Removing restrictions on XCom size
 XCom is the Airflow message queue for exchanging data between Tasks. If you try to store in a XCom an object bigger than 65KB, it will crash. The `airflow-engine/airflow.sh` file takes care of this, by modifying the database structure.
 
-## Deployment
+## Airflow + MySQL Deployment
 ```bash
 docker-compose build
 docker-compose up
