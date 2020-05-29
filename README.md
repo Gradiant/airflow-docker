@@ -7,9 +7,9 @@ There's no official image in DockerHub for Apache Airflow. With a Dockerfile wit
 ```Dockerfile
 FROM python:3.7
 RUN pip3 install 'apache-airflow'
-RUN initdb
+RUN airflow initdb
 
-CMD (airflow scheduler &) && (airflow webserver &) && wait
+CMD (airflow scheduler &) && airflow webserver
 ```
 
 Note that when running the container, port 8080 has to be opened and directory /root/airflow mapped to a volume.
