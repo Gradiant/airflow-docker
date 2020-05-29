@@ -4,7 +4,7 @@ FROM python:3.7
 # Install and setup Airflow
 RUN pip3 install 'apache-airflow[mysql,crypto]' mysql-connector-python
 
-# Configure Airflow: connect to backend and create connections to Atlassian API
+# Configure Airflow: connect to backend
 COPY airflow.sh /airflow.sh
 RUN chmod +x airflow.sh
 COPY fernet.py /fernet.py
