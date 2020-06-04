@@ -2,7 +2,7 @@
 [Apache Airflow](https://airflow.apache.org) is an open-source tool to programmatically author, schedule and monitor workflows. These workflows are designed in Python, and monitored, scheduled and managed with a web UI. Airflow can easily integrate with data sources like HTTP APIs, databases (MySQL, SQLite, Postgres...) and more.
 
 ## Airflow deployment in Docker
-There's an Apache Airflow image https://hub.docker.com/r/apache/airflow[in DockerHub]. We can also build our own image with the following Dockerfile:
+There's an Apache Airflow image [in DockerHub](https://hub.docker.com/r/apache/airflow). We can also build our own image with the following Dockerfile:
 
 ```Dockerfile
 FROM python:3.7
