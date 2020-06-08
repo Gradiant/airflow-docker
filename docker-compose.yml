@@ -14,6 +14,7 @@ services:
     build: ./airflow-engine
     depends_on: 
       - airflow-backend
+    init: true
     networks: 
       - airflow-backend
     volumes:
