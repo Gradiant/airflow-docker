@@ -8,7 +8,9 @@ if [ ! -f "$INIT_FILE" ]; then
     python fernet.py
 
     # Wait until the DB is ready
-    sleep 30
+    while ! nc -z airflow-backend 3306; do   
+        sleep 1
+    done
 
     # Setup the DB
     python mysqlconnect.py
