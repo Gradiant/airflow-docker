@@ -1,14 +1,14 @@
 version: "3.7"
 services:
   airflow-backend:
-    build: ./airflow-backend
+    image: mysql:latest
     command: --default-authentication-plugin=mysql_native_password
     networks: 
       - airflow-backend
     volumes:
       - "airflow-backend:/var/lib/mysql"
-    environment:
-      MYSQL_ROOT_PASSWORD: sOmErAnDoMsTuFF
+    env_file:
+      - mysql.env
     
   airflow-engine:
     build: ./airflow-engine
@@ -20,6 +20,8 @@ services:
       - "airflow-engine:/root/airflow/"
     ports:
       - "8080:8080"
+    env_file:
+      - mysql.env
 
 networks:
   airflow-backend:

@@ -1,8 +1,8 @@
-LABEL maintainer="gbarreiro@gradiant.org" \
-      organization="gradiant.org"
-
 # Airflow seems to crash with Python 3.8, it's important to use version 3.7 instead
 FROM python:3.7
+
+LABEL maintainer="gbarreiro@gradiant.org" \
+      organization="gradiant.org"
 
 # Install and setup Airflow
 RUN pip3 install 'apache-airflow[mysql,crypto]' mysql-connector-python
