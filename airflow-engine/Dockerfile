@@ -1,4 +1,7 @@
-# Airflow seems to crash with Python 3.8, it's important to use version 3.6
+LABEL maintainer="gbarreiro@gradiant.org" \
+      organization="gradiant.org"
+
+# Airflow seems to crash with Python 3.8, it's important to use version 3.7 instead
 FROM python:3.7
 
 # Install and setup Airflow
